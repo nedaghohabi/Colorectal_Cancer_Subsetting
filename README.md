@@ -17,20 +17,24 @@ Jesujoba Owolabi (jesujoba.owolabi.ace@stu.cu.edu.ng)
 Hyonyoung Shin (hyonyous@andrew.cmu.edu)
 
 ## What kind of problem are we trying to solve?
+
 The consensus molecular subtypes (CMS) classification classifies colorectal cancer into four molecular subtypes with distinct biological characteristics, which may form the basis for clinical stratification and subtype-based targeted intervention. We aim to develop a tool that would, based on this information, automate drug recommendation for patients with a specific molecular subtype of colorectal cancer.
 
 ## What does our tool do?
+
 Our tool performs RNA-seq pathway analysis based on CMS data of the colorectal cancer, in search of differentially (over/under) expressed pathways that are associated with different subtypes of colorectal cancer. The final result of that analysis is visualized in an R Shiny dashboard.
 
 The analysis result is then used to come up with drug recommendations based on enzymes involved in that pathways and finding their inhibitors or activators. Overall, this entire workflow creates a link between a colorectal cancer subtype that a specific patient is suffering from, and a drug that could be used in treatment of the disease. That means that the drug recommendation is personalized.
 
 ## Overall pipeline
+
 ![Flowchart](https://user-images.githubusercontent.com/89701701/157960912-675750de-2c07-40a1-9dad-32c32b7af546.png)
 
 
 
 ## Pathway analysis
 ### Pipeline steps
+
 1. Download CMS SRA data from NCBI using SRA toolkit: (https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=3&WebEnv=MCID_622b744a94b9b522d227f612&f=consensus_molecular_subtype_sam_s%3An%3Ac&o=acc_s%3Aa)
 
     Run selector for:
@@ -68,6 +72,7 @@ Radar plot example:
 * Pathway visualization linked with the drug suggestions
 
 ### Method
+
 1. Using Drugmonizome API, 'L1000FWD Upregulated KEGG Pathways' and 'L1000FWD Downregulated KEGG Pathways' datasets are downloaded to capture expression changes in both directions.
 
 ```
